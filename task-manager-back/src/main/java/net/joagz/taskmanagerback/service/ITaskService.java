@@ -10,10 +10,12 @@ public interface ITaskService {
 
     public Task findById(long id);
 
-    public void save(Task task);
+    public void save(Task task, Long user_id);
 
     public void delete(Task task);
     
     public void toggleCheck(long task_id);
+
+    public void update(Task task);
 
 }
