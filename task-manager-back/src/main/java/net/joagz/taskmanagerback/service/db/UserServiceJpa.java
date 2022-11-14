@@ -1,12 +1,15 @@
 package net.joagz.taskmanagerback.service.db;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import net.joagz.taskmanagerback.model.Profile;
 import net.joagz.taskmanagerback.model.User;
 import net.joagz.taskmanagerback.repository.UserRepository;
 import net.joagz.taskmanagerback.service.IUserService;
@@ -18,8 +21,15 @@ public class UserServiceJpa implements IUserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private ProfileServiceJpa profileService;
+
     @Override
     public void delete(User user) {
+        user.setProfile(null);
         userRepository.deleteById(user.getId());
     }
 
@@ -36,6 +46,14 @@ public class UserServiceJpa implements IUserService {
 
     @Override
     public void save(User user) {
+
+        Profile profile = profileService.findById(1);
+        List<Profile> profiles = new LinkedList<Profile>();
+
+        profiles.add(profile);
+        user.setProfile(profiles);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setStatus(1);
         userRepository.save(user);
     }
 

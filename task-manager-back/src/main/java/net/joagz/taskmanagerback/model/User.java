@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
+@Table(name = "Users")
 public class User {
 
     @Id
@@ -26,11 +26,11 @@ public class User {
     private String email;
     private int status;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "UserProfile", joinColumns = @JoinColumn(name = "profile_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "UserProfiles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "profile_id"))
     private List<Profile> profile;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private List<Task> tasks;
 
     @Override
@@ -87,4 +87,13 @@ public class User {
         this.tasks = tasks;
     }
 
+    public List<Profile> getProfile() {
+        return profile;
+    }
+
+    public void setProfile(List<Profile> profile) {
+        this.profile = profile;
+    }
+
+    
 }

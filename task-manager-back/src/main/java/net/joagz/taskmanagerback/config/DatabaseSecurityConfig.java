@@ -24,9 +24,9 @@ public class DatabaseSecurityConfig extends WebSecurityConfigurerAdapter {
                 .jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery(
-                        "select username, password, state from Users where username=?")
+                        "select username, password, status from Users where username=?")
                 .authoritiesByUsernameQuery(
-                        "select u.username, p.profile from UserProfile up " +
+                        "select u.username, p.profile from UserProfiles up " +
                                 "inner join Users u on u.id = up.user_id " +
                                 "inner join Profiles p on p.id = up.profile_id " +
                                 "where u.username = ?");
@@ -38,6 +38,7 @@ public class DatabaseSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("*")
                 .permitAll();
+        http.csrf().disable();
     }
 
     @Bean

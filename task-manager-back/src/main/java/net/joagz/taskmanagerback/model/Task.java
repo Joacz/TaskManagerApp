@@ -18,13 +18,9 @@ public class Task {
     private Long id;
     private String title;
 
-    @ManyToOne
-    @JoinTable(name = "Users", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private User user;
-
     @Override
     public String toString() {
-        return "Task [id=" + id + ", title=" + title + ", user=" + user + "]";
+        return "Task [id=" + id + ", title=" + title + "]";
     }
 
     public Long getId() {
@@ -41,14 +37,6 @@ public class Task {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
 }
