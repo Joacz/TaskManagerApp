@@ -18,4 +18,6 @@ public interface ITaskService {
 
     public void update(Task task);
 
+    public List<Task> findAllByUser_id(Long user_id);
+
 }

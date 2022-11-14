@@ -29,9 +29,16 @@ public class TaskController {
     @Autowired
     private UserServiceJpa userService;
 
-    @GetMapping("")
+    @GetMapping("/admin/view")
     public List<Task> getUsers() {
         return taskService.findAll();
+    }
+
+    @GetMapping("")
+    public List<Task> getUsers(Authentication auth) {
+        User user = userService.findByUsername(auth.getName());
+        
+        return taskService.findAllByUser_id(user.getId());
     }
 
     @GetMapping("/{id}")
@@ -53,24 +60,25 @@ public class TaskController {
         String auth_name = auth.getName();
         User user = userService.findByUsername(auth_name);
 
-
         taskService.save(task, user.getId());
         return new ResponseEntity<Task>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{id}")
-    public String deleteUser(@PathVariable long id) {
-
+    public String deleteUser(@PathVariable long id, Authentication auth) {
+        User user = userService.findByUsername(auth.getName());
         Task task = taskService.findById(id);
 
         if (task == null) {
             return "Task not found";
         }
 
-        taskService.delete(task);
+        if (task.getUser().getId() == user.getId()) {
+            taskService.delete(task);
+            return "Task deleted";
+        }
 
-        return "Task deleted";
-
+        return "ERROR, this task is not associated with your user or doesn't exist.";
     }
 
 }

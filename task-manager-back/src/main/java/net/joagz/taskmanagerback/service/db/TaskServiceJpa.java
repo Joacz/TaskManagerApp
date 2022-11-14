@@ -1,5 +1,6 @@
 package net.joagz.taskmanagerback.service.db;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import net.joagz.taskmanagerback.model.Task;
+import net.joagz.taskmanagerback.model.User;
 import net.joagz.taskmanagerback.repository.TaskRepository;
 import net.joagz.taskmanagerback.service.ITaskService;
 
@@ -39,6 +41,12 @@ public class TaskServiceJpa implements ITaskService {
     }
 
     @Override
+    public List<Task> findAllByUser_id(Long user_id) {
+        List<Task> tasks = taskRepository.findAllByUser_id(user_id);
+        return tasks;
+    }
+
+    @Override
     public Task findById(long id) {
         Optional<Task> task = taskRepository.findById(id);
         return task.get();
@@ -46,7 +54,8 @@ public class TaskServiceJpa implements ITaskService {
 
     @Override
     public void save(Task task, Long user_id) {
-        task.setUser(userService.findById(user_id));
+        User user = userService.findById(user_id);
+        task.setUser(user);
         taskRepository.save(task);
     }
 

@@ -2,6 +2,9 @@ package net.joagz.taskmanagerback.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import net.joagz.taskmanagerback.model.User;
 import net.joagz.taskmanagerback.service.db.UserServiceJpa;
 

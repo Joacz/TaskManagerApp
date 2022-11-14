@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+
 @Entity
 @Table(name = "Tasks")
 public class Task {
@@ -21,6 +23,7 @@ public class Task {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
+    @JsonIncludeProperties(value = "id")
     private User user;
 
     @Override

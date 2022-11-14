@@ -11,8 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.springframework.security.core.GrantedAuthority;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Users")
@@ -21,8 +24,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String username;
+
+    @JsonIgnore
     private String password;
+    private String username;
     private String email;
     private int status;
 
@@ -30,13 +35,10 @@ public class User {
     @JoinTable(name = "UserProfiles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "profile_id"))
     private List<Profile> profile;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
-    private List<Task> tasks;
-
     @Override
     public String toString() {
         return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", status="
-                + status + ", tasks=" + tasks + "]";
+                + status + ", profile=" + profile + "]";
     }
 
     public long getId() {
@@ -79,14 +81,6 @@ public class User {
         this.status = status;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
-
     public List<Profile> getProfile() {
         return profile;
     }
@@ -95,5 +89,4 @@ public class User {
         this.profile = profile;
     }
 
-    
 }
