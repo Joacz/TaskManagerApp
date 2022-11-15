@@ -1,0 +1,38 @@
+@import url("../index.css");
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  gap: 1em;
+  box-shadow: 1em 1em 1.5em rgba(0, 0, 0, 0.247);
+  border-radius: 1em;
+  background: var(--primary-bg-secondary);
+  text-align: center;
+  border: 1px solid var(--primary-divider);
+  padding: 2rem 3rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: .6em;
+  margin-bottom: 1em;
+}
+
+.card-content p {
+  line-height: 1.1em;
+  font-size: 1em;
+  margin: 0;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-content .title {
+  font-weight: 900;
+  font-family: DM Sans;
+  font-size: 1.3em;
+  text-align: center;
+}

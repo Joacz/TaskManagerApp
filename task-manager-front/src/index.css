@@ -1,10 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
+:root {
+  --primary-main: #f36161;
+  --primary-main-hover: #e44c4c;
+  --primary-bg: #121212;
+  --primary-bg-darker: #0e0d0d;
+  --primary-text-secondary: rgba(255, 255, 255, 0.7);
+  --primary-bg-secondary: rgba(48, 48, 48, 0.12);
+  --primary-divider: rgba(255, 255, 255, 0.12);
+}
+
+.animated {
+  transition: .2s ease-in-out;
+}
 
 body {
   margin: 0;
   font-family: DM Sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+.deco-underline {
+  background-image: -webkit-linear-gradient(transparent 60%, var(--primary-main) 50%);
+  text-shadow: 5px 10px var(--primary-bg);
+}
+
+* {
+  font-family: DM Sans;
+}
+
+.title {
+  font-size: 2.5em;
+  font-family: Montserrat Alternates;
 }
 
 code {
