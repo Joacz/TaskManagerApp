@@ -15,15 +15,27 @@
 }
 
 main {
-  width: 50%;
+  width: 750px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
   background: var(--primary-bg);
   min-height: 100vh;
+  flex-direction: column;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width:1500px) {
+  .divider {
+    display: none;
+  }
+}
 
-  main{
-    width: 80%;
+@media only screen and (max-width: 750px) {
+
+  main {
+    width: 100%;
+    font-size: .9em;
+    text-align: center;
   }
 
   .title-container {
@@ -36,6 +48,13 @@ main {
     justify-content: center;
     align-items: center;
   }
+
+
+}
+
+.divider {
+  height: 6rem;
+  width: 100%;
 }
 
 .title-container {

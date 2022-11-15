@@ -1,0 +1,48 @@
+@import url('../index.css');
+
+.nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 750px;
+  padding: 0 2em;
+  transform: translate(-50%);
+  justify-content: space-between;
+  align-items: center;
+  background: #090909a1;
+  backdrop-filter: blur(.5em);
+  z-index: 1000;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.nav-ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5em;
+  font-size: 1.2em;
+}
+
+a {
+  font-family: Montserrat Alternates;
+  color: #bbb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.nav Button {
+  max-width: fit-content;
+}
+
+@media only screen and (max-width: 750px) {
+  .nav {
+    width: 100%;
+  }
+}

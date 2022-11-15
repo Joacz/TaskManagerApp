@@ -13,7 +13,7 @@
   border: 1px solid transparent;
 }
 
-button:hover{
+.button:hover{
   cursor: pointer;
 }
 
@@ -21,7 +21,7 @@ button:hover{
   width: 100%;
 }
 
-button::before {
+.button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -33,11 +33,11 @@ button::before {
   transition: all .3s;
 }
 
-button:hover::before {
+.button:hover::before {
   transform: scale(0);
 }
 
-button::after {
+.button::after {
   content: '';
   position: absolute;
   top: 0;
@@ -49,6 +49,6 @@ button::after {
   transition: all .3s;
 }
 
-button:hover::after {
+.button:hover::after {
   transform: scale(1.2);
 }

@@ -3,12 +3,16 @@
 
 :root {
   --primary-main: #f36161;
-  --primary-main-hover: #e44c4c;
+  --primary-main-hover: #f3616149;
   --primary-bg: #121212;
   --primary-bg-darker: #0e0d0d;
   --primary-text-secondary: rgba(255, 255, 255, 0.7);
   --primary-bg-secondary: rgba(48, 48, 48, 0.12);
   --primary-divider: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 .animated {

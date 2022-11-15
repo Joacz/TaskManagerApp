@@ -1,6 +1,18 @@
-.ContainerBetween{
+.ContainerBetween {
   margin: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1500px) {
+
+  .ContainerBetween {
+    gap: 3em;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
 }

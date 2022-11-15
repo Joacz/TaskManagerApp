@@ -1,0 +1,148 @@
+@import url("../index.css");
+
+main {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.tasks-title {
+  gap: .5em;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid var(--primary-divider);
+  background: var(--primary-divider);
+}
+
+.container-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+}
+
+.task {
+  user-select: none;
+  background: var(--primary-divider);
+  text-align: center;
+  border: 1px solid var(--primary-divider);
+  padding: 1rem;
+  font-family: DM Sans;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: .3em;
+  line-height: 1.2em;
+}
+
+.icon {
+  width: 100%;
+  padding: .2rem;
+  border-radius: 100%;
+  background: rgba(120, 204, 134, 0.637);
+  z-index: 100;
+  color: rgb(35, 110, 47);
+}
+
+.checkbox-button {
+  height: 3em;
+  width: 3em;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all .3s;
+}
+
+.checkbox-button::before {
+  content: '';
+  position: absolute;
+  border: 1px solid var(--primary-text-secondary);
+  width: 100%;
+  border-radius: 100%;
+  height: 100%;
+  padding: 1em;
+  transition: all .3s;
+}
+
+.checkbox-button:hover::after {
+  transform: scale(1.2);
+}
+
+.checkbox-button:focus::before {
+  animation: scale .5s forwards;
+}
+
+.checkbox-button:active::before {
+  animation: none;
+}
+
+@keyframes scale {
+
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+}
+
+.checkbox-button::after {
+  content: '';
+  background: var(--primary-text-secondary);
+  position: absolute;
+  width: 100%;
+  border-radius: 100%;
+  height: 100%;
+  transition: all .3s;
+}
+
+.text-md {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  line-height: .5em;
+  height: 2em;
+}
+
+.task-content {
+  display: flex;
+  gap: .5em;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  padding: .3em;
+}
+
+.category {
+  border: 1px solid var(--primary-main);
+  border-radius: 1em;
+  color: var(--primary-main);
+  background: var(--primary-main-hover);
+}
+
+.title-task {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: left;
+  padding-left: .5em;
+  margin: 0 1em;
+  width: 100%;
+}
