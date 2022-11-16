@@ -13,12 +13,12 @@
   border: 1px solid transparent;
 }
 
-.button:hover{
+.button:hover {
   cursor: pointer;
 }
 
 .container-btn {
-  width: 100%;
+  width: auto;
 }
 
 .button::before {
@@ -50,5 +50,13 @@
 }
 
 .button:hover::after {
-  transform: scale(1.2);
+  transform: scale(1.1);
+}
+
+.button-submit {
+  width: 100%;
+}
+
+.container-btn-submit{
+  width: 100%;
 }

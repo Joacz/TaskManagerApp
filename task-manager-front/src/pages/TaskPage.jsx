@@ -8,7 +8,7 @@ const TaskPage = () => {
   const { user_id } = useParams('user_id');
 
   return (
-    <main>
+    <main className='taskpage'>
       <div className='tasks-title'>
         <UserCircleIcon width={40} height={40} />
         <div className='user-name'>

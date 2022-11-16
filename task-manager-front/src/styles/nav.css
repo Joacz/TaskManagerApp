@@ -5,14 +5,26 @@
   position: fixed;
   top: 0;
   left: 50%;
-  width: 750px;
+  width: 100%;
+  transform: translate(-50%);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all .3s;
+}
+
+.def-nav {
+  position: fixed;
+  display: flex;
   padding: 0 2em;
   transform: translate(-50%);
+  left: 50%;
+  top: 0;
   justify-content: space-between;
   align-items: center;
+  width: 750px;
   background: #090909a1;
   backdrop-filter: blur(.5em);
-  z-index: 1000;
 }
 
 .nav-buttons {
@@ -25,6 +37,7 @@
   list-style: none;
   gap: 1.5em;
   font-size: 1.2em;
+  padding: 0;
 }
 
 a {
@@ -32,6 +45,7 @@ a {
   color: #bbb;
   text-decoration: none;
 }
+
 
 a:hover {
   color: #fff;
@@ -41,8 +55,109 @@ a:hover {
   max-width: fit-content;
 }
 
+.nav-icon {
+  display: none;
+}
+
+.responsive-nav {
+  display: none;
+}
+
+
+
 @media only screen and (max-width: 750px) {
   .nav {
+    flex-direction: column;
+    width: 80%;
+    left: 0;
+    gap: 3em;
     width: 100%;
+    align-items: start;
+    padding: 1.5em;
+    transform: translate(0);
+    background: #090909a1;
+    justify-content: start;
+  }
+
+  .def-nav {
+    display: none;
+  }
+
+  .responsive-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 1em;
+  }
+
+  li {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--primary-divider);
+  }
+
+  .nav-link {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+  }
+
+  li:hover {
+    background: rgba(255, 255, 255, 0.123);
+  }
+
+  .responsive-nav .nav-ul {
+    flex-direction: column;
+    justify-content: start;
+    text-align: left;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-icon {
+    display: inline;
+  }
+}
+
+.nav-btn {
+  background: none;
+  color: #fff;
+  border: none;
+  user-select: none;
+  transition: all .3s;
+}
+
+.nav-btn:hover {
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  transform: scale(1, 1.2);
+}
+
+.nav-btn:focus {
+  animation: .3s btnanim;
+  border: none;
+}
+
+.nav-btn:active {
+  border: none;
+  animation: none;
+}
+
+@keyframes btnanim {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.4, .9);
+  }
+
+  100% {
+    transform: scale(1, 1);
   }
 }
