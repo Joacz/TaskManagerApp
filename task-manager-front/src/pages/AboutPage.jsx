@@ -1,8 +1,14 @@
 import React from 'react';
 import '../styles/about.css';
 import myselfImg from '../imgs/me.jpeg';
+import Nav from '../components/Nav';
 
 const AboutPage = () => {
+
+  const getUserTasks = async() =>{
+    const response = await fetch();
+  }
+
   const spanStyle = {
     'font-size': '.8em',
     'padding-bottom': '1em',
@@ -23,6 +29,9 @@ const AboutPage = () => {
 
   return (
     <main className='about-container'>
+      <div className='back-container'>
+        <a href='/'>{'<- back'}</a>
+      </div>{' '}
       <div className='title-img-container'>
         <img className='myself-img' src={myselfImg} alt='' />
         <span className='title-about title'>Joaquín Gómez</span>
