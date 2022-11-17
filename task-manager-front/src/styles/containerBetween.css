@@ -10,6 +10,9 @@
 
   .ContainerBetween {
     gap: 3em;
+    margin: 0;
+    width: 100%;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
   }

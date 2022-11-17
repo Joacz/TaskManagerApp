@@ -59,8 +59,8 @@ const Nav = () => {
             </li>
           </ul>
           <div className='nav-buttons'>
-            <Button>Login</Button>
-            <Button>Register</Button>
+            <Button href='/login'>Login</Button>
+            <Button href='/register'>Register</Button>
           </div>
         </div>
       ) : (

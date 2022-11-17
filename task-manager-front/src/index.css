@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Public+Sans:wght@300;400;600&display=swap');
 :root {
   --primary-main: #f36161;
-  --primary-main-hover: #f3616149;
+  --primary-main-hover: #833737;
   --primary-bg: #121212;
   --primary-bg-darker: #0e0d0d;
   --primary-text-secondary: rgba(255, 255, 255, 0.7);
@@ -27,7 +27,7 @@ html {
 }
 
 * {
-  font-family: "DM Sans";
+  font-family: "Public Sans";
 }
 
 .deco-underline {
@@ -35,11 +35,8 @@ html {
   text-shadow: 5px 10px var(--primary-bg);
 }
 
-* {
-  font-family: DM Sans;
-}
-
 .title {
+  padding: 0 .1em;
   font-size: 2.5em;
   font-family: Montserrat Alternates;
 }

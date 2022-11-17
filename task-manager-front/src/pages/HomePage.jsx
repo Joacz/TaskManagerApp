@@ -10,7 +10,7 @@ import Nav from '../components/Nav';
 
 const HomePage = () => {
   return (
-    <main>
+    <main className='app-main'>
       <Nav />
 
       <div className='title-container'>

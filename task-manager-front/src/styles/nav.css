@@ -76,6 +76,7 @@ a:hover {
     padding: 1.5em;
     transform: translate(0);
     background: #090909a1;
+    backdrop-filter: blur(.5em);
     justify-content: start;
   }
 
@@ -92,7 +93,7 @@ a:hover {
     padding-bottom: 1em;
   }
 
-  li {
+  .nav-ul li {
     display: flex;
     width: 100%;
     border-bottom: 1px solid var(--primary-divider);
@@ -104,7 +105,7 @@ a:hover {
     padding: 1em;
   }
 
-  li:hover {
+  .nav-ul li:hover {
     background: rgba(255, 255, 255, 0.123);
   }
 

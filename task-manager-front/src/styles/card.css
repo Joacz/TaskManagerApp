@@ -5,6 +5,7 @@
   flex-direction: column;
   max-width: 20rem;
   justify-content: center;
+  align-items: center;
   gap: 1em;
   box-shadow: 1em 1em 1.5em rgba(0, 0, 0, 0.247);
   border-radius: 1em;
@@ -20,6 +21,7 @@
   flex-direction: column;
   gap: .6em;
   margin-bottom: 1em;
+
 }
 
 .card-content p {

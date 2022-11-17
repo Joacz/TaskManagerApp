@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Title = (props) => {
-  return <span className='title deco-underline'>{props.children}</span>;
+  return <h1 className='title deco-underline'>{props.children}</h1>;
 }
 
 export default Title
