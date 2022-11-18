@@ -5,9 +5,7 @@ import Nav from '../components/Nav';
 
 const AboutPage = () => {
 
-  const getUserTasks = async() =>{
-    const response = await fetch();
-  }
+  
 
   const spanStyle = {
     'font-size': '.8em',

@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/tasks.css';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 import Task from '../components/Task';
 import Button from '../components/Button';
+import { useNavigate } from 'react-router-dom';
 
 const TaskPage = () => {
   const { user_id } = useParams('user_id');
+  const navigate = useNavigate();
+  const getTasksFromUser = async () => {
+    const response = await fetch('http://localhost:8080/tasks');
+  };
+
+  useEffect(() => {
+    getTasksFromUser();
+  }, []);
 
   return (
     <main className='taskpage'>

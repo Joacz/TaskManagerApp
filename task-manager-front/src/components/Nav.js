@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/nav.css';
 import Button from './Button';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
 const Nav = () => {
   const [responsiveNav, setResponsiveNav] = useState(false);
+
+  const getUserId = async () => {
+    const response = await fetch(
+      'http://localhost:8080/tasks/user/getsession',
+      { method: 'GET' }
+    );
+    console.log(response.id);
+    return response;
+  };
+
+  let id = getUserId();
 
   const handleNav = () => {
     const nav = document.getElementById('nav');
@@ -31,7 +42,7 @@ const Nav = () => {
             <a href='/about'>About</a>
           </li>
           <li>
-            <a href='/tasks/1'>Tasks</a>
+            <a href={`/tasks/${id}`}>Tasks</a>
           </li>
         </ul>
         <div className='nav-buttons'>

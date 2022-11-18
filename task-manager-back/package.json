@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-hook-form": "^7.39.4",
+    "react-use-form": "^0.1.0"
+  }
+}

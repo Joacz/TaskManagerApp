@@ -34,6 +34,11 @@ public class TaskController {
         return taskService.findAll();
     }
 
+    @GetMapping("/user/getsession")
+    public User getUserBySession(Authentication auth) {
+        return userService.findByUsername(auth.getName());
+    }
+
     @GetMapping("")
     public List<Task> getUsers(Authentication auth) {
         User user = userService.findByUsername(auth.getName());

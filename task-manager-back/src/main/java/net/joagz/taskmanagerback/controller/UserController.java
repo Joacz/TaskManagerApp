@@ -9,9 +9,11 @@ import net.joagz.taskmanagerback.model.User;
 import net.joagz.taskmanagerback.service.db.UserServiceJpa;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,7 +32,7 @@ public class UserController {
     public List<User> getUsers() {
         return userService.findAll();
     }
-
+    
     @GetMapping("/{id}")
     public User getUserById(@PathVariable long id) {
         return userService.findById(id);
